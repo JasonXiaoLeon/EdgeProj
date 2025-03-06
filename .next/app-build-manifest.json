@@ -10,10 +10,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/layout.js"
     ],
-    "/api/fixtures/route": [
+    "/api/upload/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/fixtures/route.js"
+      "static/chunks/app/api/upload/route.js"
     ]
   }
 }

@@ -16,18 +16,16 @@ export async function POST(req: NextRequest) {
 
     await connectDB();
 
-    // Iterate over each item and check if it already exists in the database
     const newData = [];
     for (const item of data) {
-      const existingItem = await Data.findOne({ uniqueId: item.uniqueId });  // Replace 'uniqueId' with your actual unique identifier field
+      const existingItem = await Data.findOne({ uniqueId: item.uniqueId });
       if (!existingItem) {
-        newData.push(item);  // If the item does not exist, push it to the newData array
+        newData.push(item); 
       }
     }
 
     if (newData.length > 0) {
-      const insertedData = await Data.insertMany(newData);  // Insert only new data
-
+      const insertedData = await Data.insertMany(newData);
       return new Response(JSON.stringify({
         message: 'Data successfully uploaded',
         insertedData,
